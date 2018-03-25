@@ -1,6 +1,34 @@
-// Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder. 
-// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+// Colours
+$primary: #673AB7;
+$dark-primary: #512DA8;
+$light-primary: #D1C4E9;
+$text-primary: #212121;
+$text-secondary: #757575;
+$text-light: #FFFFFF;
+$accent: #009688;
+$divider: #BDBDBD;
+// Fonts
+@font-face {
+    font-family: 'junctionbold';
+    src: url('../fonts/Junction-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'junctionlight';
+    src: url('../fonts/Junction-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-$primary: #0052CC; // Thats a sample how you could change a BootStrap variable.
+@font-face {
+    font-family: 'junctionregular';
+    src: url('../fonts/Junction-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-bold: 'junctionbold';
+$font-light: 'junctionlight';
+$font: 'junctionregular';

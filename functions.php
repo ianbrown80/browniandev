@@ -1,8 +1,8 @@
 <?php
 /**
- * Understrap functions and definitions
+ * Browniandev functions and definitions
  *
- * @package understrap
+ * @package browniandev
  */
 
 /**
