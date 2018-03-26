@@ -17,6 +17,24 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'danielregular';
+  src: url("../fonts/Daniel-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'danielblack';
+  src: url("../fonts/Daniel-Black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'danielbold';
+  src: url("../fonts/Daniel-Bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 /*!
  * Bootstrap v4.0.0-beta.3 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -9484,9 +9502,34 @@ a {
   color: #212121; }
 
 .navbar {
-  background-color: none;
-  font-family: "junctionbold";
-  color: #212121; }
+  font-family: "junctionlight";
+  font-size: 0.75rem; }
+  .navbar > .container {
+    justify-content: center; }
+  .navbar a {
+    color: #009688;
+    text-decoration: none; }
+
+.navbar-collapse {
+  flex-grow: 0; }
+  @media only screen and (max-width: 767px) {
+    .navbar-collapse {
+      order: 3; } }
+
+.navbar-toggler {
+  color: #009688;
+  order: 2; }
+
+.navbar-brand {
+  font-size: 3.0rem;
+  margin: 0 25px;
+  font-family: "danielbold"; }
+  @media only screen and (max-width: 767px) {
+    .navbar-brand {
+      order: 1; } }
+
+.menu-item {
+  text-align: center; }
 
 /*
 * Use existing Bootstrap 4 classes and

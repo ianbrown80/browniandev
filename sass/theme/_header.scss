@@ -1,5 +1,37 @@
 .navbar {
-    background-color: none;
-    font-family: $font-bold;
-    color: $text-primary;
+    //background-color: $primary;
+    font-family: $font-light;
+    font-size: 0.75rem;
+    &>.container {
+        justify-content: center;
+    }
+    & a {
+        color: $accent;
+        text-decoration: none;
+    }
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+    @media only screen and (max-width: 767px) {
+        order: 3;
+    }
+}
+
+.navbar-toggler {
+    color: $accent;
+    order: 2;
+}
+
+.navbar-brand {
+    font-size: 3.0rem;
+    margin: 0 25px;
+    font-family: $handwriting-bold;
+    @media only screen and (max-width: 767px) {
+        order: 1;
+    }
+}
+
+.menu-item {
+    text-align: center;
 }

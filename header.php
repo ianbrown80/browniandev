@@ -31,6 +31,22 @@
 		<nav class="navbar navbar-expand-md">
 
 			<div class="container">
+
+				<div id="navbarNavDropDown-left" class="collapse navbar-collapse">
+
+				<?php wp_nav_menu(
+					array(
+						'theme_location'  => 'primary_nav_left',
+						//'container_class' => 'collapse navbar-collapse',
+						//'container_id'    => 'navbarNavDropdown',
+						'menu_class'      => 'navbar-nav navbar-nav-left',
+						'fallback_cb'     => '',
+						'menu_id'         => 'main-menu-left',
+						'walker'          => new WP_Bootstrap_Navwalker(),
+					)
+				); ?>
+
+				</div>
 		
 					<?php if ( ! has_custom_logo() ) { ?>
 
@@ -48,22 +64,26 @@
 						the_custom_logo();
 					} ?><!-- end custom logo -->
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="fa fa-reorder"></span>
 				</button>
+
+				<div id="navbarNavDropDown-right" class="collapse navbar-collapse">
 
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
 					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav',
+						'theme_location'  => 'primary_nav_right',
+						//'container_class' => 'collapse navbar-collapse',
+						//'container_id'    => 'navbarNavDropdown',
+						'menu_class'      => 'navbar-nav-right navbar-nav',
 						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
+						'menu_id'         => 'main-menu-right',
 						'walker'          => new WP_Bootstrap_Navwalker(),
 					)
 				); ?>
+
+				</div><!-- #NavBarDropDown -->
 
 			</div><!-- .container -->
 

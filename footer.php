@@ -4,11 +4,11 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package understrap
+ * @package browniandev
  */
 
 $the_theme = wp_get_theme();
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod( 'browniandev_container_type' );
 ?>
 
 <?php get_sidebar( 'footerfull' ); ?>
@@ -25,18 +25,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 
-							<a href="<?php  echo esc_url( __( 'http://wordpress.org/','understrap' ) ); ?>"><?php printf( 
+							<a href="<?php  echo esc_url( __( 'http://wordpress.org/','browniandev' ) ); ?>"><?php printf( 
 							/* translators:*/
-							esc_html__( 'Proudly powered by %s', 'understrap' ),'WordPress' ); ?></a>
+							esc_html__( 'Proudly powered by %s', 'browniandev' ),'WordPress' ); ?></a>
 								<span class="sep"> | </span>
 					
 							<?php printf( // WPCS: XSS ok.
 							/* translators:*/
-								esc_html__( 'Theme: %1$s by %2$s.', 'understrap' ), $the_theme->get( 'Name' ),  '<a href="'.esc_url( __('http://understrap.com', 'understrap')).'">understrap.com</a>' ); ?> 
+								esc_html__( 'Theme: %1$s by %2$s.', 'browniandev' ), $the_theme->get( 'Name' ),  '<a href="'.esc_url( __('http://browniandev.com', 'browniandev')).'">browniandev.com</a>' ); ?> 
 				
 							(<?php printf( // WPCS: XSS ok.
 							/* translators:*/
-								esc_html__( 'Version: %1$s', 'understrap' ), $the_theme->get( 'Version' ) ); ?>)
+								esc_html__( 'Version: %1$s', 'browniandev' ), $the_theme->get( 'Version' ) ); ?>)
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->

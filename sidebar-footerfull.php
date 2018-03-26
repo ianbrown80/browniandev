@@ -2,10 +2,10 @@
 /**
  * Sidebar setup for footer full.
  *
- * @package understrap
+ * @package browniandev
  */
 
-$container   = get_theme_mod( 'understrap_container_type' );
+$container   = get_theme_mod( 'browniandev_container_type' );
 
 ?>
 

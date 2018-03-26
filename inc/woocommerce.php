@@ -2,14 +2,14 @@
 /**
  * Add WooCommerce support
  *
- * @package understrap
+ * @package browniandev
  */
-add_action( 'after_setup_theme', 'understrap_woocommerce_support' );
-if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
+add_action( 'after_setup_theme', 'browniandev_woocommerce_support' );
+if ( ! function_exists( 'browniandev_woocommerce_support' ) ) {
 	/**
 	 * Declares WooCommerce theme support.
 	 */
-	function understrap_woocommerce_support() {
+	function browniandev_woocommerce_support() {
 		add_theme_support( 'woocommerce' );
 		
 		// Add New Woocommerce 3.0.0 Product Gallery support
@@ -20,7 +20,7 @@ if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
 		//add_theme_support( 'wc-product-gallery-slider' );
 
 		// hook in and customizer form fields.
-		add_filter( 'woocommerce_form_field_args', 'understrap_wc_form_field_args', 10, 3 );
+		add_filter( 'woocommerce_form_field_args', 'browniandev_wc_form_field_args', 10, 3 );
 	}
 }
 /**
@@ -33,7 +33,7 @@ if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
  *
  * @return mixed
  */
-function understrap_wc_form_field_args( $args, $key, $value = null ) {
+function browniandev_wc_form_field_args( $args, $key, $value = null ) {
 	// Start field type switch case.
 	switch ( $args['type'] ) {
 		/* Targets all select input type elements, except the country and state select input types */

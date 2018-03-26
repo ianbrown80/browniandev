@@ -2,13 +2,13 @@
 /**
  * Left sidebar check.
  *
- * @package understrap
+ * @package browniandev
  */
 
 ?>
 
 <?php
-$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+$sidebar_pos = get_theme_mod( 'browniandev_sidebar_position' );
 ?>
 
 <?php if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>

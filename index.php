@@ -8,12 +8,12 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package understrap
+ * @package browniandev
  */
 
 get_header();
 
-$container   = get_theme_mod( 'understrap_container_type' );
+$container   = get_theme_mod( 'browniandev_container_type' );
 ?>
 
 <?php if ( is_front_page() && is_home() ) : ?>
@@ -58,7 +58,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<?php browniandev_pagination(); ?>
 
 		</div><!-- #primary -->
 

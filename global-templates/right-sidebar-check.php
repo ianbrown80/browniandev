@@ -2,11 +2,11 @@
 /**
  * Right sidebar check.
  *
- * @package understrap
+ * @package browniandev
  */
 ?>
 
-<?php $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' ); ?>
+<?php $sidebar_pos = get_theme_mod( 'browniandev_sidebar_position' ); ?>
 
 <?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 

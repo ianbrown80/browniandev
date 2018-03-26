@@ -2,7 +2,7 @@
 /**
  * Post rendering content according to caller of get_template_part.
  *
- * @package understrap
+ * @package browniandev
  */
 
 ?>
@@ -17,7 +17,7 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 
 			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
+				<?php browniandev_posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 		<?php endif; ?>
@@ -34,7 +34,7 @@
 
 		<?php
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'browniandev' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -43,7 +43,7 @@
 
 	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
+		<?php browniandev_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 

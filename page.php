@@ -7,12 +7,12 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package understrap
+ * @package browniandev
  */
 
 get_header();
 
-$container   = get_theme_mod( 'understrap_container_type' );
+$container   = get_theme_mod( 'browniandev_container_type' );
 
 ?>
 
