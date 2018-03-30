@@ -9502,12 +9502,13 @@ a {
   color: #212121; }
 
 .navbar {
+  background-color: #673AB7;
   font-family: "junctionlight";
   font-size: 0.75rem; }
   .navbar > .container {
     justify-content: center; }
   .navbar a {
-    color: #009688;
+    color: #FFFFFF;
     text-decoration: none; }
 
 .navbar-collapse {
@@ -9530,6 +9531,94 @@ a {
 
 .menu-item {
   text-align: center; }
+
+#footer {
+  background-color: #512DA8;
+  color: #FFFFFF; }
+  #footer a,
+  #footer .fa {
+    color: #FFFFFF; }
+
+#custom-twitter-feeds-widget-2 {
+  overflow: hidden; }
+
+.site-info,
+.mini-blog {
+  padding: 25px 0; }
+
+.twitter {
+  background-color: #673AB7;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  padding-top: 20px; }
+
+#ctf {
+  overflow: hidden; }
+
+.ctf-item {
+  position: relative;
+  padding: 25px;
+  border: none;
+  width: 33%;
+  float: left; }
+
+.ctf-tweets {
+  width: 300%;
+  height: 200px; }
+
+.ctf-header-img {
+  display: none; }
+
+.ctf-header {
+  width: 300% !important; }
+
+.ctf-tweet-actions {
+  clear: both;
+  float: right; }
+
+.ctf-author-box {
+  float: left;
+  width: 25%; }
+
+.ctf-tweet-text {
+  width: 75%;
+  float: right;
+  font-family: "danielbold"; }
+  .ctf-tweet-text a {
+    color: #757575; }
+
+.ctf-header-follow {
+  background-color: transparent !important;
+  color: #FFFFFF !important; }
+
+.footer_menu li {
+  list-style: none;
+  padding-bottom: 20px; }
+
+.footer_menu {
+  padding: 0; }
+
+.mini-blog-date {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-bottom: 1.0rem; }
+
+.mini-blog-title {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  text-align: center; }
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px;
+  background-color: #673AB7; }
+  .copyright p {
+    display: inline; }
+
+.signature {
+  font-family: "danielregular"; }
 
 /*
 * Use existing Bootstrap 4 classes and

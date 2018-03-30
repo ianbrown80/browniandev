@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
 
 <div id="page">
-
+	
 	<!-- ******************* The Navbar Area ******************* -->
 	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
 
@@ -37,8 +37,6 @@
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary_nav_left',
-						//'container_class' => 'collapse navbar-collapse',
-						//'container_id'    => 'navbarNavDropdown',
 						'menu_class'      => 'navbar-nav navbar-nav-left',
 						'fallback_cb'     => '',
 						'menu_id'         => 'main-menu-left',
@@ -74,8 +72,6 @@
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary_nav_right',
-						//'container_class' => 'collapse navbar-collapse',
-						//'container_id'    => 'navbarNavDropdown',
 						'menu_class'      => 'navbar-nav-right navbar-nav',
 						'fallback_cb'     => '',
 						'menu_id'         => 'main-menu-right',

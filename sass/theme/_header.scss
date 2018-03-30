@@ -1,12 +1,12 @@
 .navbar {
-    //background-color: $primary;
+    background-color: $primary;
     font-family: $font-light;
     font-size: 0.75rem;
     &>.container {
         justify-content: center;
     }
     & a {
-        color: $accent;
+        color: $text-light;
         text-decoration: none;
     }
 }

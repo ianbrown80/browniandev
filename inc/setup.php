@@ -43,6 +43,8 @@ if ( ! function_exists( 'browniandev_setup' ) ) :
 		register_nav_menus( array(
 			'primary_nav_left' => __( 'Primary Menu Left', 'browniandev' ),
 			'primary_nav_right' => __( 'Primary Menu Right', 'browniandev' ),
+			'footer_menu_left' => __( 'Footer Menu Left', 'browniandev' ),
+			'footer_menu_right' => __( 'Footer Menu Right', 'browniandev' ),
 		) );
 
 		/*

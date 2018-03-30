@@ -7,49 +7,92 @@
  * @package browniandev
  */
 
-$the_theme = wp_get_theme();
-$container = get_theme_mod( 'browniandev_container_type' );
 ?>
 
-<?php get_sidebar( 'footerfull' ); ?>
+<div class="wrapper" id="wrapper-footer">	
+		
+	<footer class="site-footer" id="footer">		
 
-<div class="wrapper" id="wrapper-footer">
+		<div class="twitter">
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+			<div class="container">
 
-		<div class="row">
+				<div class="row">
 
-			<div class="col-md-12">
+					<?php get_sidebar( 'footerfull' ); ?>
 
-				<footer class="site-footer" id="colophon">
+				</div><!-- container end -->
 
-					<div class="site-info">
+			</div><!-- .row end -->
 
-							<a href="<?php  echo esc_url( __( 'http://wordpress.org/','browniandev' ) ); ?>"><?php printf( 
-							/* translators:*/
-							esc_html__( 'Proudly powered by %s', 'browniandev' ),'WordPress' ); ?></a>
-								<span class="sep"> | </span>
+		</div><!-- .twitter end -->
+
+		<div class="container">
+			
+			<div class="row">
+
+				<div class="mini-blog col-md-5">
+
+					<!-- Start the Loop. -->
+					<?php query_posts('posts_per_page=3'); ?>
+ 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+						<p class="mini-blog-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
+						<p class="mini-blog-date"><?php the_time('F jS, Y'); ?> </p>						
+
+					<?php endwhile; else : ?>
+
+						<p><?php esc_html_e( 'Sorry, no posts found.' ); ?></p>
+
+					<?php endif; ?>
 					
-							<?php printf( // WPCS: XSS ok.
-							/* translators:*/
-								esc_html__( 'Theme: %1$s by %2$s.', 'browniandev' ), $the_theme->get( 'Name' ),  '<a href="'.esc_url( __('http://browniandev.com', 'browniandev')).'">browniandev.com</a>' ); ?> 
+				</div><!-- .mini-blog -->
+
+				<div class="site-info col-md-5 offset-2">
+
+					<div class="row">
+
+						<?php wp_nav_menu(
+							array(
+								'theme_location'  => 'footer_menu_left',
+								'menu_class'      => 'footer_menu',
+								'container_class' => 'col-md-6',
+								'fallback_cb'     => '',
+								'menu_id'         => 'footer_menu_left',
+							)
+						); ?>
+
+						<?php wp_nav_menu(
+							array(
+								'theme_location'  => 'footer_menu_right',
+								'menu_class'      => 'footer_menu',
+								'container_class' => 'col-md-6',
+								'fallback_cb'     => '',
+								'menu_id'         => 'footer_menu_right',
+							)
+						); ?>
+
+					</div><!-- .row end -->
+					
+				</div><!-- .site-info -->				
 				
-							(<?php printf( // WPCS: XSS ok.
-							/* translators:*/
-								esc_html__( 'Version: %1$s', 'browniandev' ), $the_theme->get( 'Version' ) ); ?>)
-					</div><!-- .site-info -->
+			</div><!-- .row end -->
 
-				</footer><!-- #colophon -->
+		</div><!-- container end -->
 
-			</div><!--col end -->
+		<div class="copyright">
 
-		</div><!-- row end -->
+			<p>Designed and built by </p>
+			<a class="signature" href="http://www.browniandev.co.uk">Ian Brown </a>
+			<p>&copy;<?php echo date('Y'); ?></p>
 
-	</div><!-- container end -->
+		</div><!-- copyright end -->
+
+	</footer><!-- #footer end -->	
 
 </div><!-- wrapper end -->
 
-</div><!-- #page we need this extra closing tag here -->
+</div><!-- #page end -->
 
 <?php wp_footer(); ?>
 
