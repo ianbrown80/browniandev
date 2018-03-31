@@ -1,3 +1,11 @@
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+
 .navbar {
     background-color: $primary;
     font-family: $font-light;
@@ -9,6 +17,7 @@
         color: $text-light;
         text-decoration: none;
     }
+    padding: 0;
 }
 
 .navbar-collapse {

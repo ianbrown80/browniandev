@@ -4,11 +4,11 @@
      * Twitter Scroller
      * @author Ian Brown
      */
-
-    var speed = 2000;
-    var pause = 5000;
-    var slides = 3;
-    var current = 0;
+    console.log("here");
+    var twitterSpeed = 2000;
+    var twitterPause = 5000;
+    var twitterSlides = 3;
+    var twitterCurrent = 0;
 
     var $tweetSlider = $("#ctf");
     var $tweets = $(".ctf-item");
@@ -17,36 +17,60 @@
     $tweetContainer.append($tweets.first().clone());
     $tweets = $(".ctf-item");
 
-    $tweetContainer.width($tweetContainer.width() + $tweetContainer.width() / slides - 12);
+    $tweetContainer.width($tweetContainer.width() + $tweetContainer.width() / twitterSlides - 12);
     $tweetSlider.width($tweetContainer.width());
-    $tweets.width($tweetContainer.width() / (slides + 1) - 10);
+    $tweets.width($tweetContainer.width() / (twitterSlides + 1) - 10);
 
-    var width = $tweetContainer.width() / (slides + 1);
+    var twitterWidth = $tweetContainer.width() / (twitterSlides + 1);
 
-    var interval;
+    var twitterSliderInterval;
 
-    function runSlider() {
+    function runTwitterSlider() {
 
-        interval = setInterval(function() {
+        twitterSliderInterval = setInterval(function() {
 
-            $tweetContainer.animate({ 'margin-left': '-=' + width }, speed, function() {
-                current++;
-                if (current == slides) {
-                    current = 0;
+            $tweetContainer.animate({ 'margin-left': '-=' + twitterWidth }, twitterSpeed, function() {
+                twitterCurrent++;
+                if (twitterCurrent == twitterSlides) {
+                    twitterCurrent = 0;
                     $tweetContainer.css('margin-left', 0);
                 }
             });
-        }, pause);
+        }, twitterPause);
 
     }
 
-    function pauseSlider() {
-        clearInterval(interval);
+    function pauseTwitterSlider() {
+        clearInterval(twitterSliderInterval);
     }
 
-    $tweetSlider.on('mouseenter', pauseSlider).on('mouseleave', runSlider);
+    $tweetSlider.on('mouseenter', pauseTwitterSlider).on('mouseleave', runTwitterSlider);
+    runTwitterSlider();
 
-    runSlider();
+    /**
+     * Hero Image Slideshow
+     * @author Ian Brown
+     */
+
+    var $heroImages = $('.hero-image');
+    var heroImageSlides = 5;
+    var heroImageCurrent = 0;
+    var heroImageSpeed = 5000;
+    var heroImagePause = 10000;
+
+    $heroImages.hide();
+    $heroImages.first().show();
+    setInterval(function() {
+        $heroImages.eq(heroImageCurrent).fadeOut(heroImageSpeed);
+        heroImageCurrent++;
+        if (heroImageCurrent == heroImageSlides) {
+            heroImageCurrent = 0;
+        }
+        $heroImages.eq(heroImageCurrent).fadeIn(heroImageSpeed);
+
+    }, heroImagePause);
+
+
 
 
 

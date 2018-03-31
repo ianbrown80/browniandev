@@ -1,0 +1,47 @@
+section {
+    min-height: 100vh;
+}
+
+#hero-image-slideshow {
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-image-slider-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: 100% 100%;
+}
+
+.hero-text {
+    font-family: $handwriting;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba($primary, 0.5);
+    padding: 20px;
+    color: $text-light;
+}
+
+.enter {
+    position: relative;
+    top: -100px;
+    width: 100px;
+    font-size: 4rem;
+    margin: 0 auto;
+    color: $primary;
+    display: block;
+}
