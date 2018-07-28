@@ -1,12 +1,12 @@
 <?php
 /**
- * Portfolio Landing page partial template.
+ * Homepage Skills partial template.
  *
  * @package browniandev
  */
 
 ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
@@ -25,4 +25,4 @@
 
 	</footer><!-- .entry-footer -->
 
-</article><!-- #post-37 -->
+</section><!-- #post-37 -->

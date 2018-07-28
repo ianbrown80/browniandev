@@ -70,4 +70,14 @@ require get_template_directory() . '/inc/woocommerce.php';
  */
 require get_template_directory() . '/inc/editor.php';
 
+/**
+ * Load Editor functions.
+ */
+require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * Load Editor functions.
+ */
+require get_template_directory() . '/inc/custom-taxonomies.php';
+
 

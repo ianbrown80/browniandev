@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post partial template.
+ * Single Blog partial template.
  *
  * @package browniandev
  */

@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Right Sidebar Layout
+ * Template Name: Blog Landing Page
  *
- * This template can be used to override the default template and sidebar setup
+ * The blog landing page
  *
  * @package browniandev
  */
@@ -25,7 +25,7 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+						<?php get_template_part( 'loop-templates/content-blog', 'page' ); ?>
 
 						<?php
 						// If comments are open or we have at least one comment, load up the comment template.

@@ -1,12 +1,12 @@
 <?php
 /**
- * Partial template for content in page.php
+ * Homepage Blog partial template.
  *
  * @package browniandev
  */
 
 ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
@@ -14,19 +14,9 @@
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
 	<div class="entry-content">
 
-		<?php the_content(); ?>
-
-		<?php
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'browniandev' ),
-			'after'  => '</div>',
-		) );
-		?>
-
+		
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
@@ -35,4 +25,4 @@
 
 	</footer><!-- .entry-footer -->
 
-</article><!-- #post-## -->
+</section><!-- #post-37 -->

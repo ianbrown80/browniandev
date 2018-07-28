@@ -1,6 +1,6 @@
 <?php
 /**
- * Portfolio Landing page partial template.
+ * Blog Landing page partial template.
  *
  * @package browniandev
  */
