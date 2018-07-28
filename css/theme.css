@@ -9655,15 +9655,15 @@ section {
   font-family: "danielregular";
   text-align: center;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   background-color: rgba(103, 58, 183, 0.5);
   padding: 20px;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  height: 100%;
+  line-height: 100vh; }
 
 .enter {
   position: relative;
-  top: -100px;
+  top: -150px;
   width: 100px;
   font-size: 4rem;
   margin: 0 auto;

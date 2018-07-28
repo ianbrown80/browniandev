@@ -29,16 +29,16 @@ section {
     font-family: $handwriting;
     text-align: center;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: rgba($primary, 0.5);
     padding: 20px;
     color: $text-light;
+    height: 100%;
+    line-height: 100vh;
 }
 
 .enter {
     position: relative;
-    top: -100px;
+    top: -150px;
     width: 100px;
     font-size: 4rem;
     margin: 0 auto;

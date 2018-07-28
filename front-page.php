@@ -29,14 +29,39 @@ get_header();
                                    
                     </div><!-- .hero-image-slider-container -->
 
-                    <a class="animated wobble infinite enter" href="#portfolio"><span class=" rollIn fa fa-chevron-down"></span></a>   
+                    <a class="animated wobble infinite enter" href="#about"><span class=" rollIn fa fa-chevron-down"></span></a>   
                 
                 </section><!-- #hero-image-slideshow -->     
 
+                <section id="about">
+                
+                
+                </section><!-- #about --> 
+
                 <section id="portfolio">
-                
-                
-                </section>
+
+                    <?php
+                    $args = array(
+                        'post_type' => 'page',
+                        'post__in' => array( 37 ), //page ID for the portfolio page
+                    ); ?>
+                    <?php $page_query = new WP_Query( $args ); ?>
+
+                    <?php if( $page_query->have_posts() ) : ?>
+                            
+                        <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?> 
+                            <?php get_template_part( 'loop-templates/content', 'portfolio-page' ); ?>
+                        <?php endwhile; ?>
+                        
+                    <?php else: ?>
+
+                    <h2>The Portfolio page is missing! Panic!!!!!</h2>
+
+                    <?php endif; ?>
+
+                    <?php wp_reset_postdata(); ?>
+
+                </section><!-- #portfolio --> 
                        
 
             </main><!-- #main -->
