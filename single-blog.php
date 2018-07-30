@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Single Pos Page
+ * Template Name: Single Blog Page
  *
- * Single Post Page
+ * Single Blog Page
  *
  * @package browniandev
  */

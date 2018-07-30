@@ -8,86 +8,107 @@
  */
 
 get_header();
-$container = get_theme_mod( 'browniandev_container_type' );
+
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+	<div class="col-md-12 content-area" id="primary">
 
-		<div class="row">
+		<main class="site-main" id="main" role="main">
 
-			<div class="col-md-12 content-area" id="primary">
+		<!-- Homepage Hero Section -->
 
-				<main class="site-main" id="main" role="main">
+		<?php if (get_field( 'hero_show_on_homepage' )) :?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+			<section id="home-hero">
 
-						<?php get_template_part( 'loop-templates/content-portfolio', 'home' ); ?>
+				<?php get_template_part( 'loop-templates/content-hero', 'home' ); ?>					
 
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
+			</section><!-- #home-hero -->
 
-							comments_template();
+		<?php endif; ?>
 
-						endif;
-						?>
+		<!-- Endo of Homepage Hero Section -->
 
-					<?php endwhile; // end of the loop. ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'loop-templates/content-services', 'home' ); ?>
 
-						<?php get_template_part( 'loop-templates/content-skills', 'home' ); ?>
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
 
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
+					comments_template();
 
-							comments_template();
+				endif;
+				?>
 
-						endif;
-						?>
+			<?php endwhile; // end of the loop. ?>
 
-					<?php endwhile; // end of the loop. ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'loop-templates/content-portfolio', 'home' ); ?>
 
-						<?php get_template_part( 'loop-templates/content-blog', 'home' ); ?>
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
 
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
+					comments_template();
 
-							comments_template();
+				endif;
+				?>
 
-						endif;
-						?>
+			<?php endwhile; // end of the loop. ?>
 
-					<?php endwhile; // end of the loop. ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'loop-templates/content-skills', 'home' ); ?>
 
-						<?php get_template_part( 'loop-templates/content-testimonials', 'home' ); ?>
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
 
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
+					comments_template();
 
-							comments_template();
+				endif;
+				?>
 
-						endif;
-						?>
+			<?php endwhile; // end of the loop. ?>
 
-					<?php endwhile; // end of the loop. ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				</main><!-- #main -->
+				<?php get_template_part( 'loop-templates/content-blog', 'home' ); ?>
 
-			</div><!-- #primary -->
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
 
-		</div><!-- .row end -->
+					comments_template();
 
-	</div><!-- Container end -->
+				endif;
+				?>
+
+			<?php endwhile; // end of the loop. ?>
+
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'loop-templates/content-testimonials', 'home' ); ?>
+
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+
+					comments_template();
+
+				endif;
+				?>
+
+			<?php endwhile; // end of the loop. ?>
+
+		</main><!-- #main -->
+
+	</div><!-- #primary -->
 
 </div><!-- Wrapper end -->
 

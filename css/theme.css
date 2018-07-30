@@ -9502,11 +9502,11 @@ a {
   color: #212121; }
 
 #header {
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 100px; }
 
 .navbar {
   background-color: #673AB7;

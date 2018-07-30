@@ -3,6 +3,7 @@
 add_action( 'init', 'custom_portfolio_post_type', 0 );
 add_action( 'init', 'custom_testimonials_post_type', 0 );
 add_action( 'init', 'custom_blog_post_type', 0 );
+add_action( 'init', 'custom_services_post_type', 0 );
 //add_action( 'init', 'custom_skills_post_type', 0 );
 
 /**
@@ -155,7 +156,7 @@ function custom_testimonials_post_type() {
  * @author Ian Brown 
  */
 
-function custom_skills_post_type() {
+/*function custom_skills_post_type() {
  
     $labels = array(
         'name'                => _x( 'Skills', 'Post Type General Name', 'browniandev' ),
@@ -194,5 +195,53 @@ function custom_skills_post_type() {
     );
         
     register_post_type( 'skills', $args );
+    
+}*/
+
+/**
+ * Create Services Posttype
+ * 
+ * @author Ian Brown 
+ */
+
+function custom_services_post_type() {
+ 
+    $labels = array(
+        'name'                => _x( 'Services', 'Post Type General Name', 'browniandev' ),
+        'singular_name'       => _x( 'Service', 'Post Type Singular Name', 'browniandev' ),
+        'menu_name'           => __( 'Services', 'browniandev' ),
+        'parent_item_colon'   => __( 'Parent Service', 'browniandev' ),
+        'all_items'           => __( 'All Services', 'browniandev' ),
+        'view_item'           => __( 'View Service', 'browniandev' ),
+        'add_new_item'        => __( 'Add New Service', 'browniandev' ),
+        'add_new'             => __( 'Add New', 'browniandev' ),
+        'edit_item'           => __( 'Edit Service', 'browniandev' ),
+        'update_item'         => __( 'Update Service', 'browniandev' ),
+        'search_items'        => __( 'Search Service', 'browniandev' ),
+        'not_found'           => __( 'Not Found', 'browniandev' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'browniandev' ),
+    );
+            
+    $args = array(
+        'label'               => __( 'service', 'browniandev' ),
+        'description'         => __( 'Services I provide', 'browniandev' ),
+        'labels'              => $labels,
+        'supports'            => array( 'title', 'editor', ),
+        'taxonomies'          => array( 'skills' ),
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 7,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'page',
+    );
+        
+    register_post_type( 'services', $args );
     
 }
