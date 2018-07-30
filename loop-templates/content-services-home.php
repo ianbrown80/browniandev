@@ -4,25 +4,16 @@
  *
  * @package browniandev
  */
-
+$service_settings = get_field( 'services', 2 );	
 ?>
-<section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+<div class="home-service home-service--<?php echo $service_settings['shape']  ? $service_settings['shape']  : 'circle' ?>" style="background: <?php echo $service_settings['colour'] ? $service_settings['colour']  : '#ffffff'?>; color: <?php echo $service_settings['text_colour']  ? $service_settings['text_colour']  : '#000000' ?>">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<p class="home-service__icon"><?php the_field( 'icon' ) ?></p>
 
-	</header><!-- .entry-header -->
+<h1 class="home-service__title"><?php the_title() ?></h1>
 
-	<div class="entry-content">
+<div class="home-service__description"><?php the_content() ?></div>
 
-		
-	</div><!-- .entry-content -->
+</div><!-- .home-service -->
 
-	<footer class="entry-footer">
-
-		<?php edit_post_link( __( 'Edit', 'browniandev' ), '<span class="edit-link">', '</span>' ); ?>
-
-	</footer><!-- .entry-footer -->
-
-</section><!-- #post-37 -->

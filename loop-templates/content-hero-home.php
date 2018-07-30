@@ -24,7 +24,7 @@ $container = get_theme_mod( 'browniandev_container_type' );
 			<?php while ( have_rows('call_to_action') ) : the_row(); ?>
 
 			<a class="hero-cta hero-cta--<?php the_sub_field( 'shape' )?> <?php echo get_sub_field( 'box_shadow' ) ? 'hero-cta--shadow' : ''?> hero-cta--<?php the_sub_field( 'size' )?>" style="background:<?php the_sub_field( 'colour' ) ?>;" href="<?php the_sub_field( 'link' ) ?>">
-				<p class="hero-cta__text"><?php the_sub_field( 'text' )?></p>
+				<p class="hero-cta__text" style="color: <?php the_sub_field( 'text_colour' ) ?>"><?php the_sub_field( 'text' )?></p>
 			</a><!-- .hero-cta -->	
 
 			<?php endwhile; ?>

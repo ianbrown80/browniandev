@@ -8,7 +8,7 @@
  */
 
 get_header();
-
+$container = get_theme_mod( 'browniandev_container_type' );
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
@@ -29,22 +29,41 @@ get_header();
 
 		<?php endif; ?>
 
-		<!-- Endo of Homepage Hero Section -->
+		<!-- End of Homepage Hero Section -->
 
-			<?php while ( have_posts() ) : the_post(); ?>
+		<!-- Homepage Services Section -->
 
-				<?php get_template_part( 'loop-templates/content-services', 'home' ); ?>
+		<?php if (get_field( 'services_show_on_homepage' )) :?>
 
-				<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
+		<?php $services_query = new WP_Query( array( 'post_type' => 'services')) ?>
 
-					comments_template();
+		<?php if ( $services_query->have_posts() ) : ?>
 
-				endif;
-				?>
+			<section id="home-services">
 
-			<?php endwhile; // end of the loop. ?>
+			<div class="<?php echo esc_attr( $container ); ?>" id="content">
+
+				<div class="row">
+
+					<?php while ( $services_query->have_posts() ) : $services_query->the_post() ?>
+
+						<?php get_template_part( 'loop-templates/content-services', 'home' ); ?>	
+
+					<?php endwhile; ?>	
+
+				</div><!-- .row -->
+
+			</div><!-- .container -->			
+
+			</section><!-- #home-services -->
+
+			<?php wp_reset_postdata(); ?>
+
+		<?php endif; ?>
+
+		<?php endif; ?>
+
+		<!-- End of Homepage Services Section -->
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
