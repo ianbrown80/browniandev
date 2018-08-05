@@ -111,7 +111,7 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 				<div class="row">
 
-					<?php while ( have_rows('websites') ) : the_row(); ?>
+					<?php while ( have_rows( 'websites' ) ) : the_row(); ?>
 
 						<?php get_template_part( 'loop-templates/content-portfolio', 'home' ); ?>	
 
@@ -131,20 +131,37 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<!-- End of Homepage Portfolio Section -->
 
-			<?php while ( have_posts() ) : the_post(); ?>
+		<!-- Homepage Testimonials Section -->
 
-				<?php get_template_part( 'loop-templates/content-testimonials', 'home' ); ?>
+		<?php if (get_field( 'testimonials_show_on_homepage' )) :?>
 
-				<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
+		<?php if( have_rows( 'testimonials' ) ): ?>
 
-					comments_template();
+		<section id="home-testimonials">
+	
+			<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
-				endif;
-				?>
+				<div class="row">
 
-			<?php endwhile; // end of the loop. ?>
+					<?php while ( have_rows('testimonials') ) : the_row(); ?>
+
+						<?php get_template_part( 'loop-templates/content-testimonials', 'home' ); ?>
+
+					<?php endwhile; ?>	
+
+				</div><!-- .row -->
+
+			</div><!-- .container -->			
+
+			</section><!-- #home-testimonials -->
+
+			<?php wp_reset_postdata(); ?>
+
+			<?php endif; ?>
+
+			<?php endif; ?>
+
+			<!-- End of Homepage Portfolio Section -->
 
 		</main><!-- #main -->
 

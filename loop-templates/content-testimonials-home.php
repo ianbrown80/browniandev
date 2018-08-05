@@ -5,24 +5,23 @@
  * @package browniandev
  */
 
+if (get_sub_field( 'quote' )) {
+	$post = get_sub_field( 'quote' );
+	setup_postdata( $post );
+}
 ?>
-<section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<div class="home-testimonial" style="background: <?php echo get_sub_field( 'colour' ) ? get_sub_field( 'colour' ) : '#ffffff'?>; color: <?php echo get_sub_field( 'text_colour' ) ? get_sub_field( 'text_colour' ) : '#000000' ?>">
 
-	<header class="entry-header">
+		<?php if (get_the_content()) :?>
+		<blockquote class="home-testimonial__quote"><?php the_content() ?></blockquote>
+		<?php endif; ?>
+		<?php echo get_the_ID(); ?>
+		<?php if (get_field( 'contact_name', get_the_ID() )) :?>
+		<p class="home-portfolio__name"><?php echo get_field( 'contact_name', get_the_ID() ) ?></p>
+		<?php endif; ?>
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php if (get_field( 'website', get_the_ID() )) :?>
+		<a href="<?php echo get_post_permalink( get_field( 'website', get_the_ID() )) ?>"><?php echo get_the_title( get_field( 'website', get_the_ID() ) ) ?></a>
+		<?php endif; ?>
 
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-
-		
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php edit_post_link( __( 'Edit', 'browniandev' ), '<span class="edit-link">', '</span>' ); ?>
-
-	</footer><!-- .entry-footer -->
-
-</section><!-- #post-37 -->
+</div><!-- .home-testimonial -->
