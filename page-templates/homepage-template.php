@@ -65,6 +65,40 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<!-- End of Homepage Services Section -->
 
+		<!-- Homepage Skills Section -->
+
+		<?php if (get_field( 'skills_show_on_homepage' )) :?>
+
+		<?php $skills = get_terms( array ( 'skills' ) ) ?>
+
+		<?php if( !empty( $skills )):?>
+
+		<section id="home-skills">
+			
+			<div class="<?php echo esc_attr( $container ); ?>" id="content">
+
+				<div class="row">
+
+					<?php foreach ($skills as $skill) : ?>
+
+						<?php include(locate_template( 'loop-templates/content-skills-home.php' )) ?>
+
+					<?php endforeach; ?>	
+
+				</div><!-- .row -->
+
+			</div><!-- .container -->			
+
+		</section><!-- #home-skills -->
+
+		<?php wp_reset_postdata(); ?>
+
+		<?php endif; ?>
+
+		<?php endif; ?>
+
+		<!-- End of Homepage Skills Section -->
+
 		<!-- Homepage Portfolio Section -->
 
 		<?php if (get_field( 'portfolio_show_on_homepage' )) :?>
@@ -95,37 +129,7 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<?php endif; ?>
 
-			<!-- End of Homepage Portfolio Section -->
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'loop-templates/content-skills', 'home' ); ?>
-
-				<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-
-					comments_template();
-
-				endif;
-				?>
-
-			<?php endwhile; // end of the loop. ?>
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'loop-templates/content-blog', 'home' ); ?>
-
-				<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-
-					comments_template();
-
-				endif;
-				?>
-
-			<?php endwhile; // end of the loop. ?>
+		<!-- End of Homepage Portfolio Section -->
 
 			<?php while ( have_posts() ) : the_post(); ?>
 

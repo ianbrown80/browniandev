@@ -22,7 +22,7 @@ if (get_sub_field( 'website' )) {
 		<?php $mobile_image = get_field( 'mobile_image', get_the_ID() ) ?>
 		<img class="home-portfolio__mobile-image" src="<?php echo $mobile_image['url']; ?>" alt="<?php echo $mobile_image['alt']; ?>" />
 		<?php endif; ?>
-	</a>
+	</a><!-- .home-portfolio -->
 
 	<a class="home-portfolio__text home-portfolio__text--<?php echo get_sub_field( 'shape' )  ? get_sub_field( 'shape' )  : 'circle' ?>" href="<?php the_permalink() ?>" style="background: <?php echo get_sub_field( 'text_colour' ) ? get_sub_field( 'text_colour' )  : '#000000'?>; color: <?php echo get_sub_field( 'colour' )  ? get_sub_field( 'colour' )  : '#ffffff' ?>;  border-color: <?php echo get_sub_field( 'colour' )  ? get_sub_field( 'colour' )  : '#ffffff' ?>">
 
@@ -34,12 +34,7 @@ if (get_sub_field( 'website' )) {
 		<div class="home-portfolio__description"><?php the_content() ?></div>
 		<?php endif; ?>
 
-	</a>
+	</a><!-- .home-portfolio__text -->
 
-
-
-
-
-
-</div>
+</div><!-- .home-portfolio -->
 
