@@ -161,7 +161,7 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 			<?php endif; ?>
 
-			<!-- End of Homepage Portfolio Section -->
+			<!-- End of Homepage Testimonials Section -->
 
 		</main><!-- #main -->
 
