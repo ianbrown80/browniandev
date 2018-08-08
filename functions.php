@@ -71,13 +71,22 @@ require get_template_directory() . '/inc/woocommerce.php';
 require get_template_directory() . '/inc/editor.php';
 
 /**
- * Load Editor functions.
+ * Load Custom Post Types.
  */
 require get_template_directory() . '/inc/custom-post-types.php';
 
 /**
- * Load Editor functions.
+ * Load Custom Taxonomies.
  */
 require get_template_directory() . '/inc/custom-taxonomies.php';
 
+/**
+ * Load Custom Actions.
+ */
+require get_template_directory() . '/inc/custom-actions.php';
+
+/**
+ * Load Custom Filters.
+ */
+require get_template_directory() . '/inc/custom-filters.php';
 

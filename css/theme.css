@@ -9502,11 +9502,12 @@ a {
   color: #212121; }
 
 #header {
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
   width: 100%;
-  margin-bottom: 100px; }
+  display: none; }
 
 .navbar {
   background-color: #673AB7;
@@ -9628,47 +9629,76 @@ a {
 .signature {
   font-family: "danielregular"; }
 
-section {
-  min-height: 100vh; }
+.hero-background {
+  height: 800px;
+  width: 100%; }
+  .hero-background--image {
+    background-size: cover;
+    background-repeat: no-repeat; }
+  .hero-background__mask {
+    height: 800px;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%; }
 
-#hero-image-slideshow {
-  width: 100%;
-  height: 100vh; }
-
-.hero-image-slider-container {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0; }
-
-.hero-image {
-  width: 100%;
-  height: 100%;
+.hero-cta {
+  text-transform: uppercase;
+  display: block;
+  opacity: 1;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-size: 100% 100%; }
-
-.hero-text {
-  font-family: "danielregular";
-  text-align: center;
-  position: relative;
-  background-color: rgba(103, 58, 183, 0.5);
-  padding: 20px;
-  color: #FFFFFF;
-  height: 100%;
-  line-height: 100vh; }
-
-.enter {
-  position: relative;
-  top: -150px;
-  width: 100px;
-  font-size: 4rem;
-  margin: 0 auto;
-  color: #673AB7;
-  display: block; }
+  transition: 0.5s; }
+  .hero-cta--circle {
+    border-radius: 50%; }
+  .hero-cta--curved-square {
+    border-radius: 10%; }
+  .hero-cta--shadow {
+    box-shadow: 2px 2px 25px 5px #2e2c2c; }
+  .hero-cta--small {
+    width: 200px;
+    height: 200px; }
+    .hero-cta--small:hover {
+      width: 240px;
+      height: 240px; }
+  .hero-cta--medium {
+    width: 250px;
+    height: 250px; }
+    .hero-cta--medium:hover {
+      width: 300px;
+      height: 300px; }
+  .hero-cta--large {
+    width: 300px;
+    height: 300px; }
+    .hero-cta--large:hover {
+      width: 360px;
+      height: 360px; }
+  .hero-cta:nth-of-type(1) {
+    right: 40px;
+    top: 40px; }
+    .hero-cta:nth-of-type(1):hover {
+      right: 15px;
+      top: 15px; }
+  .hero-cta:nth-of-type(2) {
+    left: -25px;
+    top: 250px; }
+    .hero-cta:nth-of-type(2):hover {
+      left: -55px;
+      top: 220px; }
+  .hero-cta:nth-of-type(3) {
+    right: 80px;
+    top: 500px; }
+    .hero-cta:nth-of-type(3):hover {
+      right: 60px;
+      top: 480px; }
+  .hero-cta__text {
+    font-family: danielbold;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 25% 10%;
+    transition: 0.5s; }
+    .hero-cta__text:hover {
+      font-size: 2.16rem; }
+  .hero-cta:hover {
+    text-decoration: none; }
 
 /*
 * Use existing Bootstrap 4 classes and

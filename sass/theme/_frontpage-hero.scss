@@ -1,0 +1,92 @@
+.hero-background {
+    height: 800px;
+    width: 100%;
+    &--image {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__mask {
+        height: 800px;
+        opacity: 0.5;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.hero-cta {
+    text-transform: uppercase;
+    display: block;
+    opacity: 1;
+    position: absolute;
+    transition: 0.5s;
+    &--circle {
+        border-radius: 50%;
+    }
+    &--curved-square {
+        border-radius: 10%;
+    }
+    &--shadow {
+        box-shadow: 2px 2px 25px 5px rgb(46, 44, 44);
+    }
+    &--small {
+        width: 200px;
+        height: 200px;
+        &:hover {
+            width: 240px;
+            height: 240px;
+        }
+    }
+    &--medium {
+        width: 250px;
+        height: 250px;
+        &:hover {
+            width: 300px;
+            height: 300px;
+        }
+    }
+    &--large {
+        width: 300px;
+        height: 300px;
+        &:hover {
+            width: 360px;
+            height: 360px;
+        }
+    }
+    &:nth-of-type(1) {
+        right: 40px;
+        top: 40px;
+        &:hover {
+            right: 15px;
+            top: 15px;
+        }
+    }
+    &:nth-of-type(2) {
+        left: -25px;
+        top: 250px;
+        &:hover {
+            left: -55px;
+            top: 220px;
+        }
+    }
+    &:nth-of-type(3) {
+        right: 80px;
+        top: 500px;
+        &:hover {
+            right: 60px;
+            top: 480px;
+        }
+    }
+    &__text {
+        font-family: danielbold;
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 25% 10%;
+        transition: 0.5s;
+        &:hover {
+            font-size: 2.16rem;
+        }
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
