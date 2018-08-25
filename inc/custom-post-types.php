@@ -226,7 +226,7 @@ function custom_services_post_type() {
         'label'               => __( 'service', 'browniandev' ),
         'description'         => __( 'Services I provide', 'browniandev' ),
         'labels'              => $labels,
-        'supports'            => array( 'title', 'editor', ),
+        'supports'            => array( 'title', 'editor', 'thumbnail' ),
         'taxonomies'          => array( 'skills' ),
         'hierarchical'        => false,
         'public'              => true,

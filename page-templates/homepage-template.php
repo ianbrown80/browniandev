@@ -35,21 +35,27 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<?php if (get_field( 'services_show_on_homepage' )) :?>
 
-		<?php $services_query = new WP_Query( array( 'post_type' => 'services')) ?>
-
-		<?php if ( $services_query->have_posts() ) : ?>
-
-			<section id="home-services">
+		<section id="home-services" style="background: <?php echo get_field( 'services_background_colour' ) ? get_field( 'services_background_colour' ) : '#ffffff' ?>" >
 
 			<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
-				<div class="row">
+				<div class="row row-centre">
+					
+					<?php $page_id = get_the_ID(); ?>
+					
+					<?php if (have_rows( 'services', $page_id )) : ?>						
+							
+							<?php while (have_rows( 'services', $page_id )) : the_row(); ?>
 
-					<?php while ( $services_query->have_posts() ) : $services_query->the_post() ?>
+								<?php $post = get_sub_field( 'service' )[0]; ?>
+							
+								<?php include(locate_template( 'loop-templates/content-services-home-content.php' )) ?>
 
-						<?php get_template_part( 'loop-templates/content-services', 'home' ); ?>	
+							<?php endwhile; ?>
 
-					<?php endwhile; ?>	
+							<?php wp_reset_postdata() ?>						
+					
+					<?php endif; ?>
 
 				</div><!-- .row -->
 
@@ -58,8 +64,6 @@ $container = get_theme_mod( 'browniandev_container_type' );
 			</section><!-- #home-services -->
 
 			<?php wp_reset_postdata(); ?>
-
-		<?php endif; ?>
 
 		<?php endif; ?>
 

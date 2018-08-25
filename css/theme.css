@@ -9501,6 +9501,9 @@ body {
 a {
   color: #212121; }
 
+.row-centre {
+  justify-content: center; }
+
 #header {
   position: fixed;
   top: 0;
@@ -9673,19 +9676,22 @@ a {
       height: 360px; }
   .hero-cta:nth-of-type(1) {
     right: 40px;
-    top: 40px; }
+    top: 40px;
+    transform: rotate(10deg); }
     .hero-cta:nth-of-type(1):hover {
       right: 15px;
       top: 15px; }
   .hero-cta:nth-of-type(2) {
     left: -25px;
-    top: 250px; }
+    top: 250px;
+    transform: rotate(-15deg); }
     .hero-cta:nth-of-type(2):hover {
       left: -55px;
       top: 220px; }
   .hero-cta:nth-of-type(3) {
     right: 80px;
-    top: 500px; }
+    top: 500px;
+    transform: rotate(20deg); }
     .hero-cta:nth-of-type(3):hover {
       right: 60px;
       top: 480px; }
@@ -9699,6 +9705,30 @@ a {
       font-size: 2.16rem; }
   .hero-cta:hover {
     text-decoration: none; }
+
+#home-services {
+  padding: 25px; }
+
+.home-service {
+  width: 100%;
+  padding-bottom: 30px; }
+  .home-service__curved-square {
+    border-radius: 50px; }
+  .home-service__shadow {
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5); }
+  .home-service__container {
+    width: 100%;
+    height: 100%; }
+  .home-service__top, .home-service__bottom {
+    width: 100%; }
+  .home-service__image, .home-service__title, .home-service__bottom {
+    width: 100%;
+    text-align: center;
+    padding: 5%; }
+  .home-service__image > img {
+    height: 150px;
+    width: auto;
+    margin: 0 auto; }
 
 /*
 * Use existing Bootstrap 4 classes and
