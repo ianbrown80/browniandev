@@ -5,10 +5,10 @@
 .home-service {
     width: 100%;
     padding-bottom: 30px;
-    &__curved-square {
+    &--curved-square {
         border-radius: 50px;
     }
-    &__shadow {
+    &--shadow {
         box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5);
     }
     &__container {

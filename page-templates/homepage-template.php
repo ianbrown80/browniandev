@@ -49,7 +49,7 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 								<?php $post = get_sub_field( 'service' )[0]; ?>
 							
-								<?php include(locate_template( 'loop-templates/content-services-home-content.php' )) ?>
+								<?php include(locate_template( 'loop-templates/content-services-home.php' )) ?>
 
 							<?php endwhile; ?>
 
@@ -73,21 +73,25 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<?php if (get_field( 'skills_show_on_homepage' )) :?>
 
-		<?php $skills = get_terms( array ( 'skills' ) ) ?>
+		<section id="home-skills" style="background: <?php echo get_field( 'skills_background_colour' ) ? get_field( 'skills_background_colour' ) : '#ffffff' ?>" >
 
-		<?php if( !empty( $skills )):?>
-
-		<section id="home-skills">
-			
 			<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
-				<div class="row">
+				<div class="row row-space-around">
+	
+				<?php $page_id = get_the_ID(); ?>
 
-					<?php foreach ($skills as $skill) : ?>
+				<?php if (have_rows( 'skills', $page_id )) : ?>						
+							
+					<?php while (have_rows( 'skills', $page_id )) : the_row(); ?>
+
+						<?php $skill = get_sub_field( 'skill' ); ?>
 
 						<?php include(locate_template( 'loop-templates/content-skills-home.php' )) ?>
 
-					<?php endforeach; ?>	
+					<?php endwhile; ?>
+
+				<?php endif; ?>
 
 				</div><!-- .row -->
 
@@ -96,8 +100,6 @@ $container = get_theme_mod( 'browniandev_container_type' );
 		</section><!-- #home-skills -->
 
 		<?php wp_reset_postdata(); ?>
-
-		<?php endif; ?>
 
 		<?php endif; ?>
 

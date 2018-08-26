@@ -1,0 +1,27 @@
+{
+    "browserSyncOptions": {
+        "proxy": "localhost/browniandev",
+        "notify": false,
+        "watchOptions": {
+            "awaitWriteFinish": true
+        }
+    },
+    "browserSyncWatchFiles": [
+        "./css/*.css",
+        "./js/*.js",
+        "./**/*.php"
+    ],
+    "paths": {
+        "js": "./js",
+        "css": "./css",
+        "img": "./img",
+        "imgsrc": "./src/img",
+        "sass": "./sass",
+        "node": "./node_modules/",
+        "bower": "./bower_components/",
+        "dev": "./src",
+        "dist": "./dist",
+        "distprod": "./dist-product",
+        "vendor": ""
+    }
+}
