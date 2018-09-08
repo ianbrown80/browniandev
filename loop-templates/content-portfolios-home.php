@@ -1,18 +1,13 @@
 <?php
 /**
- * Homepage Portfolio partial template.
+ * Homepage Portfolios partial template.
  *
  * @package browniandev
  */
-if (get_sub_field( 'website' )) {
-	$post = get_sub_field( 'website' );
-	setup_postdata( $post );
-}
 ?>
-<div class="home-portfolio">
-
-	<a class="home-portfolio__image home-portfolio__image--<?php echo get_sub_field( 'shape' )  ? get_sub_field( 'shape' )  : 'circle' ?>" href="<?php the_permalink() ?>" style="background: <?php echo get_sub_field( 'colour' ) ? get_sub_field( 'colour' )  : '#ffffff'?>; color: <?php echo get_sub_field( 'text_colour' )  ? get_sub_field( 'text_colour' )  : '#000000' ?>">
-
+<div class="home-portfolio col-sm-12 col-md-6 col-lg-4" style="background: <?php echo get_sub_field( 'colour' ) ? get_sub_field( 'colour' )  : '#ffffff'?>; color: <?php echo get_sub_field( 'text_colour' )  ? get_sub_field( 'text_colour' )  : '#000000' ?>">
+	<a class="home-portfolio__link" href="<?php the_permalink() ?>">
+		<img class="home-portfolio__image" src="<?php echo get_stylesheet_directory_uri() ?>/img/responsive.svg"alt="Responsive mockup of <?php the_title() ?>">
 		<?php if (get_field( 'desktop_image', get_the_ID() )):?>
 		<?php $desktop_image = get_field( 'desktop_image', get_the_ID() ) ?>
 		<img class="home-portfolio__desktop-image" src="<?php echo $desktop_image['url']; ?>" alt="<?php echo $desktop_image['alt']; ?>" />

@@ -9,6 +9,8 @@
 
 get_header();
 $container = get_theme_mod( 'browniandev_container_type' );
+$page_id = get_the_ID();
+
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
@@ -19,13 +21,9 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<!-- Homepage Hero Section -->
 
-		<?php if (get_field( 'hero_show_on_homepage' )) :?>
+		<?php if (get_field( 'hero_show_on_homepage' )) :?>			
 
-			<section id="home-hero">
-
-				<?php get_template_part( 'loop-templates/content-hero', 'home' ); ?>					
-
-			</section><!-- #home-hero -->
+				<?php get_template_part( 'loop-templates/content-hero', 'home' ); ?>				
 
 		<?php endif; ?>
 
@@ -37,7 +35,7 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<section id="home-services" style="background: <?php echo get_field( 'services_background_colour' ) ? get_field( 'services_background_colour' ) : '#ffffff' ?>" >
 
-			<div class="<?php echo esc_attr( $container ); ?>" id="content">
+			<div class="<?php echo esc_attr( $container ); ?>">
 
 				<div class="row row-centre">
 					
@@ -75,12 +73,10 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<section id="home-skills" style="background: <?php echo get_field( 'skills_background_colour' ) ? get_field( 'skills_background_colour' ) : '#ffffff' ?>" >
 
-			<div class="<?php echo esc_attr( $container ); ?>" id="content">
+			<div class="<?php echo esc_attr( $container ); ?>">
 
 				<div class="row row-space-around">
 	
-				<?php $page_id = get_the_ID(); ?>
-
 				<?php if (have_rows( 'skills', $page_id )) : ?>						
 							
 					<?php while (have_rows( 'skills', $page_id )) : the_row(); ?>
@@ -109,19 +105,25 @@ $container = get_theme_mod( 'browniandev_container_type' );
 
 		<?php if (get_field( 'portfolio_show_on_homepage' )) :?>
 
-		<?php if( have_rows('websites') ): ?>
+		<section id="home-portfolios" style="background: <?php echo get_field( 'portfolios_background_colour' ) ? get_field( 'portolios_background_colour' ) : '#ffffff' ?>" >
 
-		<section id="home-portfolio">
-			
-			<div class="<?php echo esc_attr( $container ); ?>" id="content">
+			<div class="<?php echo esc_attr( $container ); ?>-fluid">
 
-				<div class="row">
+				<div class="row row-centre">
 
-					<?php while ( have_rows( 'websites' ) ) : the_row(); ?>
+				<?php if (have_rows( 'websites', $page_id )) : ?>						
+				
+					<?php while (have_rows( 'websites', $page_id )) : the_row(); ?>
 
-						<?php get_template_part( 'loop-templates/content-portfolio', 'home' ); ?>	
+						<?php $post = get_sub_field( 'website' ); ?>
 
-					<?php endwhile; ?>	
+						<?php setup_postdata( $post ); ?>
+
+						<?php include(locate_template( 'loop-templates/content-portfolios-home.php' )) ?>
+
+					<?php endwhile; ?>
+
+				<?php endif; ?>
 
 				</div><!-- .row -->
 
@@ -130,8 +132,6 @@ $container = get_theme_mod( 'browniandev_container_type' );
 		</section><!-- #home-portfolio -->
 
 		<?php wp_reset_postdata(); ?>
-
-		<?php endif; ?>
 
 		<?php endif; ?>
 

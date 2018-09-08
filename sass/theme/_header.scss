@@ -9,14 +9,12 @@
 }
 
 .navbar {
-    background-color: $primary;
     font-family: $font-light;
     font-size: 0.75rem;
     &>.container {
         justify-content: center;
     }
     & a {
-        color: $text-light;
         text-decoration: none;
     }
     padding: 0;
@@ -30,7 +28,6 @@
 }
 
 .navbar-toggler {
-    color: $accent;
     order: 2;
 }
 

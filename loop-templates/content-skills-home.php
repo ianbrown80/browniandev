@@ -5,10 +5,6 @@
  * @package browniandev
  */
 ?>
-
-
-
-
 <div id="home-skill-<?php echo $skill->name ?>" class="home-skill" >
     <div class="home-skill__container home-skill--<?php echo get_sub_field( 'size' ) ? get_sub_field( 'size' ) : 'medium'; ?>">
 	<?php if (get_field( 'image', $skill )):?>

@@ -6494,9 +6494,12 @@
 	}
 })();
 
-/*jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
 
-    $('.home-skill__image > img').each(function() {
+    particlesJS.load('home-hero', 'wp-content/themes/browniandev/js/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+    /*$('.home-skill__image > img').each(function() {
         var maxLeft = $(this).parent('.home-skill__image').width() / 4;
         var maxTop = $(this).parent('.home-skill__image').height() / 4;
 
@@ -6508,6 +6511,6 @@
             'top': top + 'px',
             'left': left + 'px',
         })
-    })
+    })*/
 
-});*/
+});

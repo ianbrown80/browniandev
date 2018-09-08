@@ -1,11 +1,4 @@
-        #footer {
-            background-color: $dark-primary;
-            color: $text-light;
-            & a,
-            .fa {
-                color: $text-light;
-            }
-        }
+        #footer {}
         
         #custom-twitter-feeds-widget-2 {
             overflow: hidden;
@@ -17,7 +10,6 @@
         }
         
         .twitter {
-            background-color: $primary;
             width: 100%;
             text-align: center;
             font-size: 0.75rem;
@@ -63,14 +55,11 @@
             width: 75%;
             float: right;
             font-family: $handwriting-bold;
-            & a {
-                color: $text-secondary;
-            }
+            & a {}
         }
         
         .ctf-header-follow {
             background-color: transparent !important;
-            color: $text-light !important;
         }
         
         .footer_menu li {
@@ -98,7 +87,6 @@
             width: 100%;
             text-align: center;
             padding: 25px;
-            background-color: $primary;
             & p {
                 display: inline;
             }

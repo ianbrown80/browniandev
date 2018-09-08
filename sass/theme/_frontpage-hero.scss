@@ -1,95 +1,49 @@
-.hero-background {
-    height: 800px;
-    width: 100%;
-    &--image {
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    &__mask {
-        height: 800px;
-        opacity: 0.5;
-        position: absolute;
-        width: 100%;
-    }
+#home-hero {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    padding-top: 0;
 }
 
-.hero-cta {
-    text-transform: uppercase;
-    display: block;
-    opacity: 1;
-    position: absolute;
-    transition: 0.5s;
-    &--circle {
-        border-radius: 50%;
-    }
-    &--curved-square {
-        border-radius: 10%;
-    }
-    &--shadow {
-        box-shadow: 2px 2px 25px 5px rgb(46, 44, 44);
-    }
-    &--small {
-        width: 200px;
-        height: 200px;
-        &:hover {
-            width: 240px;
-            height: 240px;
-        }
-    }
-    &--medium {
-        width: 250px;
-        height: 250px;
-        &:hover {
-            width: 300px;
-            height: 300px;
-        }
-    }
-    &--large {
-        width: 300px;
-        height: 300px;
-        &:hover {
-            width: 360px;
-            height: 360px;
-        }
-    }
-    &:nth-of-type(1) {
-        right: 40px;
-        top: 40px;
-        transform: rotate(10deg);
-        &:hover {
-            right: 15px;
-            top: 15px;
-        }
-    }
-    &:nth-of-type(2) {
-        left: -25px;
-        top: 250px;
-        transform: rotate(-15deg);
-        &:hover {
-            left: -55px;
-            top: 220px;
-        }
-    }
-    &:nth-of-type(3) {
-        right: 80px;
-        top: 500px;
-        transform: rotate(20deg);
-        &:hover {
-            right: 60px;
-            top: 480px;
-        }
-    }
+.home-hero {
     &__text {
-        font-family: danielbold;
-        font-size: 1.8rem;
-        text-align: center;
-        padding: 25% 10%;
-        transition: 0.5s;
+        position: absolute;
+        top: 30vh;
+        padding: 25px 10px;
+    }
+    &__title {
+        margin-right: 10px;
+        font-size: 4rem;
+        font-family: $handwriting;
+    }
+    &__subtitle {
+        font-size: 2rem;
+        font-family: $font-light;
+    }
+    &__ctas {
+        position: absolute;
+        top: 16rem;
+        width: 100%;
+    }
+    &__cta {
+        width: 100%;
+        margin-bottom: 1rem;
+        border: 1px solid #fff;
+        border-radius: 0;
+        transition: border-radius 0.5s;
         &:hover {
-            font-size: 2.16rem;
+            border-radius: 1.5rem;
         }
     }
-    &:hover {
-        text-decoration: none;
+    &__cta-link {
+        width: 100%;
+        font-size: 1rem;
+        text-transform: uppercase;
+        display: inline-block;
+        text-align: center;
+        line-height: 3rem;
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
