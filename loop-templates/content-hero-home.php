@@ -4,45 +4,105 @@
  *
  * @package browniandev
  */
-$container = get_theme_mod( 'browniandev_container_type' );
-?>
-<section id="home-hero" style="background-color: <?php echo get_field( 'hero_background_colour') ? get_field( 'hero_background_colour') : 'transparent' ?>; color: <?php echo get_field( 'hero_text_colour') ? get_field( 'hero_text_colour') : '#ffffff' ?>">
+$container = get_theme_mod( 'browniandev_container_type' ); 
+
+$hero = get_field( 'hero_headings' );
+$cta = get_field( 'hero_cta' );
+$ctas = $cta['ctas'];
+
+if ($hero['hero_background_colour']) {
+
+	$background = $hero['hero_background_colour']; 
+
+} else {
+
+	$background = 'transparent';
+
+}
+
+if (get_field( 'hero_type' )) {
+
+	if (get_field( 'hero_type' ) == 'particles') {
 	
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+		$particles = true;
+		do_action( 'setup_particles' );
+
+	} else {
+
+		$particles = false;
+		
+	}
+
+	if (get_field( 'hero_type' ) == 'image' && $hero['hero_image']) {
+	
+		$background_image = $hero['hero_image']['url'];
+		$background = 'transparent';
+
+	} 
+
+}
+
+?>
+
+<section id="home-hero<?php echo $particles == 'true' ? '-particles' : '' ?>" style="background-color: <?php esc_attr_e( $background ) ?>; <?php echo $background_image ? 'background-image: url(' . esc_url( $background_image ) . ');' : ''; ?> color: <?php echo $hero['hero_text_colour'] ? esc_attr__( $hero['hero_text_colour'] ) : '#000000' ?>">
+	
+	<div class="container-fluid" id="content">
 
 		<div class="row">
 
-			<div class="col-md-8">
+			<div class="col-md-6">
 			
-			<?php if (get_field( 'hero_title' ) || get_field( 'hero_subtitle' )) : ?>
-			<div class="home-hero__text" style="background-color: <?php echo get_field( 'hero_text_box_colour') ? get_field( 'hero_text_box_colour') : 'transparent' ?>">
-			<?php if (get_field( 'hero_title' )) : ?>
-				<h1 class="home-hero__title"><?php echo get_field( 'hero_title' ) ?></h1>
+			<?php if ($hero['hero_title'] || $hero['hero_subtitle']) : ?>
+
+				<div class="home-hero__text" style="background-color: <?php esc_attr_e( $background ) ?>">
+			
+					<?php if ($hero['hero_title']) : ?>
+						<h1 class="home-hero__title"><?php esc_html_e( $hero['hero_title'] ) ?></h1>
+					<?php endif; ?>
+
+					<?php if ($hero['hero_subtitle']) : ?>
+						<h2 class="home-hero__subtitle"><?php esc_html_e( $hero['hero_subtitle'] ) ?></h2>
+					<?php endif; ?>
+				</div>
+
 			<?php endif; ?>
-			<?php if (get_field( 'hero_subtitle' )) : ?>
-				<h2 class="home-hero__subtitle"><?php echo get_field( 'hero_subtitle' ) ?></h2>
-			<?php endif; ?>
-			</div>
-			<?php endif; ?>
+
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-6 home-hero__cta-container" style="background: <?php echo $cta['cta_background_colour'] ? esc_attr__( $cta['cta_background_colour'] ) : 'transparent' ?>; color: <?php echo $cta['cta_text_colour'] ? esc_attr__( $cta['cta_text_colour'] ) : '#000000' ?>;">
+
 			<?php if (have_rows( 'hero_cta' )): ?>
-			<div class="home-hero__ctas">
-				<?php while (have_rows( 'hero_cta' )): ?>
-				<?php the_row(); ?>
-				<div class="home-hero__cta" style="background-color: <?php echo get_sub_field( 'hero_cta_colour') ? get_sub_field( 'hero_cta_colour') : 'transparent' ?>;">
-					<a class="home-hero__cta-link" style="color: <?php echo get_sub_field( 'hero_cta_text_colour') ? get_sub_field( 'hero_cta_text_colour') : '#ffffff' ?>;" href="<?php echo get_sub_field( 'hero_cta_link' ) ?>"><?php echo get_sub_field( 'hero_cta_text' ) ?></a>
-				</div>
+
+			<?php while (have_rows( 'hero_cta' )): the_row(); ?>
+
+			<?php if (have_rows( 'hero_ctas' )): ?>
+				
+				<div class="home-hero__ctas">
+					
+				<?php while (have_rows( 'hero_ctas' )): the_row(); ?>
+				
+					<div class="animated bounceInRight delay-5s">
+				
+						<div class="home-hero__cta" style="background-color: <?php echo get_sub_field( 'hero_cta_colour') ? get_sub_field( 'hero_cta_colour') : 'transparent' ?>;">
+							<a class="home-hero__cta-link" style="color: <?php echo get_sub_field( 'hero_cta_text_colour') ? get_sub_field( 'hero_cta_text_colour') : '#ffffff' ?>;" href="<?php echo get_sub_field( 'hero_cta_link' ) ?>"><?php echo get_sub_field( 'hero_cta_text' ) ?></a>
+						</div>
+
+					</div>
+
 				<?php endwhile; ?>
 
-			</div>
-			
-			</div><!-- .col-md-6 -->
+				</div>
 
-		</div><!-- .row -->
+			<?php endif; ?>
+
+			<?php endwhile; ?>
+
+			<?php endif; ?>
+			
+			</div><!-- .col-md-4 -->
+
+		</div><!-- .row -->		
 		
-		<?php endif; ?>
 	</div><!-- .container -->
 </section><!-- #home-hero -->
 

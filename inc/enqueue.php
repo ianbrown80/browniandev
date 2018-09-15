@@ -17,7 +17,9 @@ if ( ! function_exists( 'browniandev_scripts' ) ) {
 		
 		wp_enqueue_script( 'jquery');
 		wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), true);
-		wp_enqueue_script( 'particles-scripts', get_template_directory_uri() . '/js/particles.min.js', array(), true);
+		if (get_field( 'hero_type' ) == 'particles') {
+			wp_enqueue_script( 'particles-scripts', get_template_directory_uri() . '/js/particles.min.js', array(), true);
+		}
 		wp_enqueue_script( 'browniandev-scripts', get_template_directory_uri() . '/js/theme.min.js', array(), $the_theme->get( 'Version' ), true );
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
