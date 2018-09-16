@@ -11,20 +11,22 @@
     &__text {
         position: absolute;
         top: 5rem;
-        left: 15rem;
+        left: 20rem;
         padding: 25px 25px;
     }
     &__title {
+        text-align: center;
         margin-right: 10px;
         font-size: 4rem;
         font-family: $handwriting;
     }
     &__subtitle {
+        text-align: center;
         font-size: 2rem;
         font-family: $font-light;
     }
     &__cta-container {
-        height: 100vh;
+        height: 150vh;
         transform: skewX(-20deg);
     }
     &__ctas {
@@ -36,7 +38,7 @@
         width: 40%;
         transform: skewX(20deg);
         margin: 1.5rem auto;
-        border: 1px solid #fff;
+        border: 2px solid #fff;
         border-radius: 1.25rem;
         transition: border-radius 0.5s;
         &:hover {
@@ -45,7 +47,7 @@
     }
     &__cta-link {
         width: 100%;
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-family: $font-light;
         display: inline-block;
         text-align: center;

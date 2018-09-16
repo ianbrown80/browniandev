@@ -48,13 +48,13 @@ if (get_field( 'hero_type' )) {
 	
 	<div class="container-fluid" id="content">
 
-		<div class="row">
-
+		<div class="row row--no-overflow" >
+			
 			<div class="col-md-6">
 			
 			<?php if ($hero['hero_title'] || $hero['hero_subtitle']) : ?>
 
-				<div class="home-hero__text" style="background-color: <?php esc_attr_e( $background ) ?>">
+				<div class="home-hero__text animated bounceInLeft delay-5s" style="background-color: <?php esc_attr_e( $background ) ?>">
 			
 					<?php if ($hero['hero_title']) : ?>
 						<h1 class="home-hero__title"><?php esc_html_e( $hero['hero_title'] ) ?></h1>
@@ -77,17 +77,13 @@ if (get_field( 'hero_type' )) {
 
 			<?php if (have_rows( 'hero_ctas' )): ?>
 				
-				<div class="home-hero__ctas">
+				<div class="home-hero__ctas animated bounceInRight delay-5s">
 					
-				<?php while (have_rows( 'hero_ctas' )): the_row(); ?>
-				
-					<div class="animated bounceInRight delay-5s">
+				<?php while (have_rows( 'hero_ctas' )): the_row(); ?>					
 				
 						<div class="home-hero__cta" style="background-color: <?php echo get_sub_field( 'hero_cta_colour') ? get_sub_field( 'hero_cta_colour') : 'transparent' ?>;">
 							<a class="home-hero__cta-link" style="color: <?php echo get_sub_field( 'hero_cta_text_colour') ? get_sub_field( 'hero_cta_text_colour') : '#ffffff' ?>;" href="<?php echo get_sub_field( 'hero_cta_link' ) ?>"><?php echo get_sub_field( 'hero_cta_text' ) ?></a>
-						</div>
-
-					</div>
+						</div>					
 
 				<?php endwhile; ?>
 

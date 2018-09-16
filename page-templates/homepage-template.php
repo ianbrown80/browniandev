@@ -19,15 +19,27 @@ $page_id = get_the_ID();
 
 		<main class="site-main" id="main" role="main">
 
+		<?php if (get_field( 'hero_show_on_homepage' )) :?>		
+		
 		<!-- Homepage Hero Section -->
 
-		<?php if (get_field( 'hero_show_on_homepage' )) :?>			
+			<?php get_template_part( 'loop-templates/content-hero', 'home' ); ?>				
 
-				<?php get_template_part( 'loop-templates/content-hero', 'home' ); ?>				
+		<!-- End of Homepage Hero Section -->
+		
+		<?php endif; ?>
+
+		<?php if (get_field( 'about_show_on_homepage' )) :?>
+		
+		<!-- Homepage About Section -->
+		
+			<?php get_template_part( 'loop-templates/content-about', 'home' ); ?>
+			
+		<!-- End of Homepage About Section -->
 
 		<?php endif; ?>
 
-		<!-- End of Homepage Hero Section -->
+		
 
 		<!-- Homepage Services Section -->
 

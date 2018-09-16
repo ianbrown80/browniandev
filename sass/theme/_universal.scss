@@ -1,12 +1,13 @@
 body {
     font-family: $font;
+    line-height: 2rem;
 }
 
 section {
     padding: 5rem 0;
 }
 
-.row {
+.row--no-overflow {
     overflow: hidden;
 }
 
