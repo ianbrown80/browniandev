@@ -37,43 +37,51 @@ $page_id = get_the_ID();
 			
 		<!-- End of Homepage About Section -->
 
-		<?php endif; ?>
-
-		
-
-		<!-- Homepage Services Section -->
+		<?php endif; ?>		
 
 		<?php if (get_field( 'services_show_on_homepage' )) :?>
 
-		<section id="home-services" style="background: <?php echo get_field( 'services_background_colour' ) ? get_field( 'services_background_colour' ) : '#ffffff' ?>" >
+		<!-- Homepage Services Section -->
 
-			<div class="<?php echo esc_attr( $container ); ?>">
+		<?php if (get_field( 'services_group' )) : ?>
+			
+		<?php $services = get_field( 'services_group' ); ?>
+	
+		<section id="home-services" class="home-services" style="background: <?php echo $services['services_background_colour'] ? esc_attr__( $services['services_background_colour'] ) : '#ffffff' ?>" >
 
-				<div class="row row-centre">
+			<div class="home-services__stripe"style="background: <?php echo $services['services_stripe_colour'] ? esc_attr__( $services['services_stripe_colour'] ) : '#ffffff' ?>" >
+
+				<div class="container home-services__container">
 					
-					<?php $page_id = get_the_ID(); ?>
+					<div class="row">
 					
-					<?php if (have_rows( 'services', $page_id )) : ?>						
-							
-							<?php while (have_rows( 'services', $page_id )) : the_row(); ?>
+						<?php $page_id = get_the_ID(); ?>
+						
+						<?php if (have_rows( 'services', $page_id )) : ?>						
+								
+								<?php while (have_rows( 'services', $page_id )) : the_row(); ?>
 
-								<?php $post = get_sub_field( 'service' )[0]; ?>
-							
-								<?php include(locate_template( 'loop-templates/content-services-home.php' )) ?>
+									<?php $post = get_sub_field( 'service' )[0]; ?>
+								
+									<?php include(locate_template( 'loop-templates/content-services-home.php' )) ?>
 
-							<?php endwhile; ?>
+								<?php endwhile; ?>
 
-							<?php wp_reset_postdata() ?>						
-					
-					<?php endif; ?>
+								<?php wp_reset_postdata() ?>						
+						
+						<?php endif; ?>
+
+					</div>
 
 				</div><!-- .row -->
 
 			</div><!-- .container -->			
 
-			</section><!-- #home-services -->
+		</section><!-- #home-services -->
 
-			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+
+		<?php wp_reset_postdata(); ?>
 
 		<?php endif; ?>
 

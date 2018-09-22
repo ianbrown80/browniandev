@@ -5,7 +5,6 @@
  * @package browniandev
  */
 ?>
-
 <?php setup_postdata( $post ); ?>
 
 <div id="home-service-<?php echo $post->post_name ?>" class="col-sm-12 col-md-6 col-lg-4 home-service" >
@@ -24,4 +23,5 @@
         
     </div>
 </div>
+
    

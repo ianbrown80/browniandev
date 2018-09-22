@@ -1,6 +1,20 @@
+.home-services {
+    height: 100vh;
+    position: relative;
+    &__stripe {
+        transform: skewY(-20deg);
+        height: 100%;
+        z-index: 1;
+        position: relative;
+        width: 100%;
+        top: -25vh;
+    }
+    &__container {
+        transform: skewY(20deg);
+    }
+}
+
 .home-service {
-    width: 100%;
-    padding-bottom: 30px;
     &--curved-square {
         border-radius: 50px;
     }
