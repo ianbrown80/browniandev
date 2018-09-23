@@ -43,7 +43,7 @@ if (get_field( 'about' )) {
 
 				</div>
 
-				<div class="col-md-6 home-about__image-container">
+				<div class="col-md-4 offset-md-1 home-about__image-container">
 
 					<?php if ($about['about_image'] ) : ?>
 

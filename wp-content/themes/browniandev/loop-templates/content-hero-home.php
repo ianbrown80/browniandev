@@ -50,26 +50,7 @@ if (get_field( 'hero_type' )) {
 
 		<div class="row row--no-overflow" >
 			
-			<div class="col-md-6">
-			
-			<?php if ($hero['hero_title'] || $hero['hero_subtitle']) : ?>
-
-				<div class="home-hero__text animated bounceInLeft delay-5s" style="background-color: <?php esc_attr_e( $background ) ?>">
-			
-					<?php if ($hero['hero_title']) : ?>
-						<h1 class="home-hero__title"><?php esc_html_e( $hero['hero_title'] ) ?></h1>
-					<?php endif; ?>
-
-					<?php if ($hero['hero_subtitle']) : ?>
-						<h2 class="home-hero__subtitle"><?php esc_html_e( $hero['hero_subtitle'] ) ?></h2>
-					<?php endif; ?>
-				</div>
-
-			<?php endif; ?>
-
-			</div>
-
-			<div class="col-md-6 home-hero__cta-container" style="background: <?php echo $cta['cta_background_colour'] ? esc_attr__( $cta['cta_background_colour'] ) : 'transparent' ?>; color: <?php echo $cta['cta_text_colour'] ? esc_attr__( $cta['cta_text_colour'] ) : '#000000' ?>;">
+			<div class="col-md-5 home-hero__cta-container" style="background: <?php echo $cta['cta_background_colour'] ? esc_attr__( $cta['cta_background_colour'] ) : 'transparent' ?>; color: <?php echo $cta['cta_text_colour'] ? esc_attr__( $cta['cta_text_colour'] ) : '#000000' ?>;">
 
 			<?php if (have_rows( 'hero_cta' )): ?>
 
@@ -96,6 +77,25 @@ if (get_field( 'hero_type' )) {
 			<?php endif; ?>
 			
 			</div><!-- .col-md-4 -->
+
+			<div class="col-md-7">
+			
+			<?php if ($hero['hero_title'] || $hero['hero_subtitle']) : ?>
+
+				<div class="home-hero__text animated bounceInLeft delay-5s" style="background-color: <?php esc_attr_e( $background ) ?>">
+			
+					<?php if ($hero['hero_title']) : ?>
+						<h1 class="home-hero__title"><?php esc_html_e( $hero['hero_title'] ) ?></h1>
+					<?php endif; ?>
+
+					<?php if ($hero['hero_subtitle']) : ?>
+						<h2 class="home-hero__subtitle"><?php esc_html_e( $hero['hero_subtitle'] ) ?></h2>
+					<?php endif; ?>
+				</div>
+
+			<?php endif; ?>
+
+			</div>
 
 		</div><!-- .row -->		
 		

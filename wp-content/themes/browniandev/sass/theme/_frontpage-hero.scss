@@ -1,18 +1,17 @@
 #home-hero,
 #home-hero-particles {
     background-size: cover;
-    background-position: 20% 50%;
+    background-position: 100% 50%;
     background-repeat: no-repeat;
     padding-top: 0;
-    height: 100vh;
+    height: 1000px;
 }
 
 .home-hero {
     &__text {
         position: absolute;
         top: 5rem;
-        left: 20rem;
-        padding: 25px 25px;
+        padding: 25px 0;
     }
     &__title {
         text-align: center;
@@ -26,17 +25,20 @@
         font-family: $font-light;
     }
     &__cta-container {
-        height: 150vh;
-        transform: skewX(-20deg);
+        height: 1065px;
+        transform: skewX(20deg);
     }
     &__ctas {
         position: absolute;
-        top: 16rem;
+        top: 10rem;
         width: 100%;
+        @include media-breakpoint-up(xl) {
+            top: 12rem;
+        }
     }
     &__cta {
-        width: 40%;
-        transform: skewX(20deg);
+        width: 50%;
+        transform: skewX(-20deg);
         margin: 1.5rem auto;
         border: 2px solid #fff;
         border-radius: 1.25rem;
