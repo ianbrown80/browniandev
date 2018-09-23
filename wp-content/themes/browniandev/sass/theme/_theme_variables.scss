@@ -1,0 +1,49 @@
+// Fonts
+@font-face {
+    font-family: 'junctionbold';
+    src: url('../fonts/Junction-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'junctionlight';
+    src: url('../fonts/Junction-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'junctionregular';
+    src: url('../fonts/Junction-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'danielregular';
+    src: url('../fonts/Daniel-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'danielblack';
+    src: url('../fonts/Daniel-Black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'danielbold';
+    src: url('../fonts/Daniel-Bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-bold: 'junctionbold';
+$font-light: 'junctionlight';
+$font: 'junctionregular';
+$handwriting: 'danielregular';
+$handwriting-bold: 'danielbold';
+$handwriting-black: 'danielblack';
